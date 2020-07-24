@@ -1,5 +1,8 @@
 package Tests;
 
+
+
+import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class BaseTest
@@ -16,12 +19,18 @@ public class BaseTest
 
     public String checkPage()
     {
-        boolean correct = $x("//div[@class='a-IRR']").exists();
+        boolean correct = $$x("//div[@role='menubar']/ul/li").size() > 0;
         boolean error1 = $x("//h1[contains(text(),'Sorry, this page')]").exists();
         boolean error2 = $x("//pre[contains(text(),'failed to parse SQL query')]").exists();
         boolean error3 = $x("//b[contains(text(),'S_BASE-003')]").exists();
-        return correct ? "0" : error1 ? "1" : error2 ? "2" : error3 ? "3" : "-1";
+        return error1 ? "Unavailable page" : error2 ? "Failed to parse SQL query" :
+                error3 ? "Error on start" : correct ? "Correct page" : "Other";
     }
 
+    public String getSessionId(String url)
+    {
+        String[] id = url.substring(51,67).split(":");
+        return id[0];
+    }
 }
 
