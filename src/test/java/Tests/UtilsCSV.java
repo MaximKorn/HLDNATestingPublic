@@ -9,16 +9,17 @@ import java.io.IOException;
 
 public class UtilsCSV
 {
-    static String CSVReadPath = "src/test/resources/Pages.csv";
-    static String CSVWritePath = "src/test/resources/PagesTestResults.csv";
+    static String csvReadPath = "src/test/resources/Pages.csv";
+    static String csvWritePath1 = "src/test/resources/PagesTestResults.csv";
+    static String csvWritePath2 = "src/test/resources/200PagesTestResults.csv";
 
-    public static CSVReader readCSV() throws IOException
+    public static CSVReader readCSV(String csvReadPath) throws IOException
     {
-        return new CSVReader(new FileReader(CSVReadPath));
+        return new CSVReader(new FileReader(csvReadPath));
     }
 
-    public static CSVWriter writeCSV() throws IOException
+    public static CSVWriter writeCSV(String csvWritePath) throws IOException
     {
-        return new CSVWriter(new FileWriter(CSVWritePath));
+        return new CSVWriter(new FileWriter(csvWritePath));
     }
 }
