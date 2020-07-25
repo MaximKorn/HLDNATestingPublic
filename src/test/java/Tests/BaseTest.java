@@ -2,6 +2,8 @@ package Tests;
 
 
 
+import org.apache.commons.lang3.time.StopWatch;
+
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -9,6 +11,8 @@ public class BaseTest
 {
     String url = "https://hldna.inlinegroup-c.ru/hldna/f?p=210:";
     String testLogin = "SELENIUM", testPassword = "$eleN1Um";
+
+    StopWatch watch = new StopWatch();
 
     public void login(String login, String password)
     {
