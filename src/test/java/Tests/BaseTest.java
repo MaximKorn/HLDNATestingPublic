@@ -3,6 +3,10 @@ package Tests;
 
 
 import org.apache.commons.lang3.time.StopWatch;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
@@ -13,6 +17,20 @@ public class BaseTest
     String testLogin = "SELENIUM", testPassword = "$eleN1Um";
 
     StopWatch watch = new StopWatch();
+
+    @BeforeTest
+    public void beforeTest()
+    {
+
+        watch.start();
+    }
+
+    @AfterTest
+    public void afterTest()
+    {
+        watch.stop();
+        System.out.println("Время выполнения теста " + watch.getTime(TimeUnit.SECONDS));
+    }
 
     public void login(String login, String password)
     {
@@ -36,5 +54,7 @@ public class BaseTest
         String[] id = url.substring(51,67).split(":");
         return id[0];
     }
+
+
 }
 
