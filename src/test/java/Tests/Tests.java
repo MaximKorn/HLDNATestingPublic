@@ -1,34 +1,17 @@
 package Tests;
 
 import static com.codeborne.selenide.Selenide.*;
-import static Tests.UtilsCSV.*;
+import static Utils.UtilsCSV.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class Tests extends BaseTest
 {
-
-    @BeforeTest
-    public void beforeTest()
-    {
-        watch.start();
-    }
-
-    @AfterTest
-    public void afterTest()
-    {
-        watch.stop();
-        System.out.println("Время выполнения теста " + watch.getTime(TimeUnit.SECONDS));
-    }
-
     @Test
     public void manyPagesTest() throws IOException
     {
