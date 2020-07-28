@@ -9,9 +9,10 @@ import java.io.IOException;
 
 public class UtilsCSV
 {
-    public static String csvReadPath = "src/test/resources/Pages.csv";
-    public static String csvWritePath1 = "src/test/resources/PagesTestResults.csv";
-    public static String csvWritePath2 = "src/test/resources/200PagesTestResults.csv";
+    public static String csvReadPages = "src/test/resources/Pages.csv";
+    public static String csvWritePages1 = "src/test/resources/PagesTestResults.csv";
+    public static String csvWritePages2 = "src/test/resources/200PagesTestResults.csv";
+    public static String csvUserData = "src/test/resources/UserData.csv";
 
     public static CSVReader readCSV(String csvReadPath) throws IOException
     {

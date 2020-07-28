@@ -5,7 +5,7 @@ package Tests;
 import org.apache.commons.lang3.time.StopWatch;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
+import com.codeborne.selenide.Configuration;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.$$x;
@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class BaseTest
 {
-    String url = "https://hldna.inlinegroup-c.ru/hldna/f?p=210:";
+    String baseUrl = "https://hldna.inlinegroup-c.ru/hldna/f?p=210:";
     String testLogin = "SELENIUM", testPassword = "$eleN1Um";
 
     StopWatch watch = new StopWatch();
@@ -22,6 +22,16 @@ public class BaseTest
     public void beforeTest()
     {
 
+      //  Configuration.remote = "http://localhost:4444/wd/hub";
+       // Configuration.browser = "firefox";
+        //Configuration.headless = false;
+        //Configuration.proxyEnabled = false;
+//        Configuration.browserCapabilities.setCapability("nativeEvents", false);
+//        Configuration.browserCapabilities.setCapability("unexpectedAlertBehaviour", "accept");
+//        Configuration.browserCapabilities.setCapability("ignoreProtectedModeSettings", true);
+//        Configuration.browserCapabilities.setCapability("disable-popup-blocking", true);
+//        Configuration.browserCapabilities.setCapability("enablePersistentHover", true);
+//        Configuration.browserCapabilities.setCapability("ignoreZoomSetting", true);
         watch.start();
     }
 
@@ -29,6 +39,7 @@ public class BaseTest
     public void afterTest()
     {
         watch.stop();
+        Configuration.remote = null;
         System.out.println("Время выполнения теста " + watch.getTime(TimeUnit.SECONDS));
     }
 
