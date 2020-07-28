@@ -10,20 +10,20 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class Tests extends BaseTest
+public class PagesTests extends BaseTest
 {
     @Test
     public void manyPagesTest() throws IOException
     {
-        CSVWriter writer = writeCSV(csvWritePath2);
-        open(url);
+        CSVWriter writer = writeCSV(csvWritePages2);
+        open(baseUrl);
         String sessionId = getSessionId(url());
         login(testLogin, testPassword);
         String[] res;
         for (int i = 1; i < 201; i++)
         {
             String page = Integer.toString(i);
-            open(url + page + ":" + sessionId);
+            open(baseUrl + page + ":" + sessionId);
             res = (page + "," + checkPage()).split(",");
             writer.writeNext(res, false);
         }
@@ -31,7 +31,7 @@ public class Tests extends BaseTest
         for (int i = 103; i < 201; i++)
         {
             String page = Integer.toString(i);
-            open(url + page + ":" + sessionId);
+            open(baseUrl + page + ":" + sessionId);
             res = (page + "," + checkPage()).split(",");
             writer.writeNext(res, false);
         }
@@ -41,10 +41,10 @@ public class Tests extends BaseTest
     @Test
     public void pagesTest() throws IOException, CsvValidationException
     {
-        CSVReader reader = readCSV(csvReadPath);
-        CSVWriter writer = writeCSV(csvWritePath1);
+        CSVReader reader = readCSV(csvReadPages);
+        CSVWriter writer = writeCSV(csvWritePages1);
         String[] csvCell;
-        open(url);
+        open(baseUrl);
         String sessionId = getSessionId(url());
         login(testLogin, testPassword);
 
@@ -53,12 +53,12 @@ public class Tests extends BaseTest
             String[] res;
             if (!csvCell[0].equals("2886"))
             {
-                open(url + csvCell[0] + ":" + sessionId);
+                open(baseUrl + csvCell[0] + ":" + sessionId);
                 res = (csvCell[0] + "," + checkPage()).split(",");
             }
             else
             {
-                open(url + csvCell[0] + ":" + sessionId + "::NO::P2886_TYPE:" + csvCell[1]);
+                open(baseUrl + csvCell[0] + ":" + sessionId + "::NO::P2886_TYPE:" + csvCell[1]);
                 res = (csvCell[0] + " " + csvCell[1] + "," + checkPage()).split(",");
             }
             writer.writeNext(res, false);
