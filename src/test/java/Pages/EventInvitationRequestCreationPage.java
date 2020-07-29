@@ -1,6 +1,7 @@
 package Pages;
 
 import com.codeborne.selenide.Condition;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -35,8 +36,18 @@ public class EventInvitationRequestCreationPage extends EventInvitationRequestPa
         return this;
     }
 
+    public EventInvitationRequestCreationPage switchToFrame() {
+        switchTo().frame($(By.tagName("iframe")));
+        return this;
+    }
+
     public EventInvitationRequestCreationPage selectFirstOrganizationInFrame() {
         $x("//span[text()='Выбрать']").click();
+        return this;
+    }
+
+    public EventInvitationRequestCreationPage returnFromFrame() {
+        switchTo().defaultContent();
         return this;
     }
 
@@ -118,5 +129,10 @@ public class EventInvitationRequestCreationPage extends EventInvitationRequestPa
     public EventInvitationRequestCreationPage checkOperationCompletion() {
         $x("//div[@class='toast-message']").shouldHave(Condition.text("Операция выполнена."));
         return this;
+    }
+
+    public EventInvitationRequestPage pressApprovalButon() {
+        $x("//a[text()='Согласование']").click();
+        return page(EventInvitationRequestPage.class);
     }
 }

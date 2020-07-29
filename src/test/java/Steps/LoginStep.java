@@ -13,8 +13,9 @@ public class LoginStep {
     }
 
     public BasePage login(String username, String password) {
-        loginPage.enterUsername(username);
-        loginPage.enterPassword(password);
-        return loginPage.pressSubmitButton();
+        return loginPage
+                .enterUsername(username)
+                .enterPassword(password)
+                .pressSubmitButton();
     }
 }
