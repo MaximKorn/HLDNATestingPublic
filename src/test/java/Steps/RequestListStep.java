@@ -15,13 +15,11 @@ public class RequestListStep {
     }
 
     public RequestsListPage setPrimaryReportOption() {
-        return requestsListPage
-                .pressEventInvitationButton()
-                .selectPrimaryReportOption();
+        return requestsListPage.selectPrimaryReportOption();
     }
 
     public EventInvitationRequestCreationPage addEventInvitationRequest() {
-        return requestsListPage.pressAddRequestButton();
+        return requestsListPage.pressAddRequestButton().pressEventInvitationButton();
     }
 
     public EventInvitationRequestPage chooseFoundRequest() {

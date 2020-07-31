@@ -135,4 +135,8 @@ public class EventInvitationRequestCreationPage extends EventInvitationRequestPa
         $x("//a[text()='Согласование']").click();
         return page(EventInvitationRequestPage.class);
     }
+
+    public String getRequestNumber() {
+        return $x("//div[@data-md-name='CODE']/div[@class='card-col-item']").getText();
+    }
 }

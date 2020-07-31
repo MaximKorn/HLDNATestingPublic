@@ -51,5 +51,8 @@ public class EventInvitationRequestCreationStep {
             .pressSendButtonInFrame()
             .checkOperationCompletion();
     }
-
+    public String rememberCreatedRequestNumber()
+    {
+        return eventInvitationRequestCreationPage.getRequestNumber();
+    }
 }
