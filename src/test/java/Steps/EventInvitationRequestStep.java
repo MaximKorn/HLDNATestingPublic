@@ -7,8 +7,8 @@ import static com.codeborne.selenide.Selenide.page;
 public class EventInvitationRequestStep {
     public EventInvitationRequestPage eventInvitationRequestPage;
 
-    public EventInvitationRequestStep(EventInvitationRequestPage eventInvitationRequestPage1) {
-        eventInvitationRequestPage = eventInvitationRequestPage1;
+    public EventInvitationRequestStep() {
+        eventInvitationRequestPage = page(EventInvitationRequestPage.class);
     }
 
     public EventInvitationRequestPage approveEventInvitationRequest(String comment) {

@@ -10,9 +10,9 @@ import static com.codeborne.selenide.Selenide.page;
 public class BaseStep {
     private BasePage basePage;
 
-    public BaseStep(BasePage basePage1)
+    public BaseStep()
     {
-        basePage = basePage1;
+        basePage = page(BasePage.class);
     }
 
     public RequestsListPage goToRequestListPage()

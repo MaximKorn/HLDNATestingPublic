@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Selenide.page;
 public class LoginStep {
     private LoginPage loginPage;
 
-    public LoginStep(LoginPage loginPage1) {
-        loginPage = loginPage1;
+    public LoginStep() {
+        loginPage = page(LoginPage.class);
     }
 
     public BasePage login(String username, String password) {
