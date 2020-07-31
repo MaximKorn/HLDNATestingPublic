@@ -43,7 +43,7 @@ public class BaseTest
         System.out.println("Время выполнения теста " + watch.getTime(TimeUnit.SECONDS));
     }
 
-    public void login(String login, String password)
+    public void loginPages(String login, String password)
     {
         $x("//input[@placeholder='Имя пользователя']").setValue(login);
         $x("//input[@placeholder='Пароль']").setValue(password);

@@ -18,20 +18,17 @@ public class RequestListStep {
         return requestsListPage
                 .pressEventInvitationButton()
                 .selectPrimaryReportOption();
-
     }
 
-    public EventInvitationRequestCreationPage addRequest() {
+    public EventInvitationRequestCreationPage addEventInvitationRequest() {
         return requestsListPage.pressAddRequestButton();
     }
 
-    public EventInvitationRequestPage chooseFoundRequest()
-    {
+    public EventInvitationRequestPage chooseFoundRequest() {
         return requestsListPage.pressFirstRequestInListButton();
     }
 
-    public RequestsListPage searchRequestByNumber(String requestNumber)
-    {
+    public RequestsListPage searchRequestByNumber(String requestNumber) {
         return requestsListPage
                 .enterRequestNumberInSearchField(requestNumber)
                 .pressEnterOnSearchField();

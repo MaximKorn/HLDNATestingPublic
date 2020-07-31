@@ -18,7 +18,7 @@ public class PagesTests extends BaseTest
         CSVWriter writer = writeCSV(csvWritePages2);
         open(baseUrl);
         String sessionId = getSessionId(url());
-        login(testLogin, testPassword);
+        loginPages(testLogin, testPassword);
         String[] res;
         for (int i = 1; i < 201; i++)
         {
@@ -46,7 +46,7 @@ public class PagesTests extends BaseTest
         String[] csvCell;
         open(baseUrl);
         String sessionId = getSessionId(url());
-        login(testLogin, testPassword);
+        loginPages(testLogin, testPassword);
 
         while ((csvCell = reader.readNext())!= null)
         {

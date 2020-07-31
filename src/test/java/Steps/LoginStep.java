@@ -2,6 +2,8 @@ package Steps;
 
 import Pages.BasePage;
 import Pages.LoginPage;
+import com.codeborne.selenide.SelenideDriver;
+import com.codeborne.selenide.impl.SelenidePageFactory;
 
 import static com.codeborne.selenide.Selenide.page;
 
