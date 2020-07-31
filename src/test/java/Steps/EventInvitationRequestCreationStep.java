@@ -15,9 +15,9 @@ public class EventInvitationRequestCreationStep {
     }
 
 
-    public EventInvitationRequestPage createEventInvitationRequest(String eventName, String eventTheme, String senderOrganization, String inviterName,
+    public EventInvitationRequestCreationPage fillInEventInvitationRequest(String eventName, String eventTheme, String senderOrganization, String inviterName,
                                                                    String eventStartDate, String eventEndDate, String invitationResponseDeadline,
-                                                                   String eventProgram, String country, String city, String address, String comment)
+                                                                   String eventProgram, String country, String city, String address)
     {
         return eventInvitationRequestCreationPage
                 .selectInitiator()
@@ -39,12 +39,17 @@ public class EventInvitationRequestCreationStep {
                 .enterAddress(address)
                 .pressSaveButton()
                 .checkDataSave()
-                .confirmExpenses()
-                .pressSendForApprovalButton()
-                .switchToFrame()
-                .enterCommentInFrame(comment)
-                .pressSendButtonInFrame()
-                .checkOperationCompletion()
-                .pressApprovalButon();
+                .confirmExpenses();
     }
+
+    public EventInvitationRequestPage sendCreatedRequestToApproval(String comment)
+    {
+
+        return eventInvitationRequestCreationPage  .pressSendForApprovalButton()
+            .switchToFrame()
+            .enterCommentInFrame(comment)
+            .pressSendButtonInFrame()
+            .checkOperationCompletion();
+    }
+
 }

@@ -126,12 +126,12 @@ public class EventInvitationRequestCreationPage extends EventInvitationRequestPa
         return this;
     }
 
-    public EventInvitationRequestCreationPage checkOperationCompletion() {
+    public EventInvitationRequestPage checkOperationCompletion() {
         $x("//div[@class='toast-message']").shouldHave(Condition.text("Операция выполнена."));
         return this;
     }
 
-    public EventInvitationRequestPage pressApprovalButon() {
+    public EventInvitationRequestPage pressApprovalButton() {
         $x("//a[text()='Согласование']").click();
         return page(EventInvitationRequestPage.class);
     }
