@@ -10,8 +10,8 @@ public class RequestListStep {
 
     RequestsListPage requestsListPage;
 
-    public RequestListStep() {
-        requestsListPage = page(RequestsListPage.class);
+    public RequestListStep(RequestsListPage requestsListPage1) {
+        requestsListPage = requestsListPage1;
     }
 
     public RequestsListPage setPrimaryReportOption() {

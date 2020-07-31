@@ -6,12 +6,13 @@ import Pages.RequestsListPage;
 
 import static com.codeborne.selenide.Selenide.page;
 
-public class BaseStep {
-    BasePage basePage;
 
-    public BaseStep()
+public class BaseStep {
+    private BasePage basePage;
+
+    public BaseStep(BasePage basePage1)
     {
-        basePage = page(BasePage.class);
+        basePage = basePage1;
     }
 
     public RequestsListPage goToRequestListPage()

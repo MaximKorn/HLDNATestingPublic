@@ -2,16 +2,14 @@ package Steps;
 
 import Pages.BasePage;
 import Pages.LoginPage;
-import com.codeborne.selenide.SelenideDriver;
-import com.codeborne.selenide.impl.SelenidePageFactory;
 
 import static com.codeborne.selenide.Selenide.page;
 
 public class LoginStep {
-    LoginPage loginPage;
+    private LoginPage loginPage;
 
-    public LoginStep() {
-        loginPage = page(LoginPage.class);
+    public LoginStep(LoginPage loginPage1) {
+        loginPage = loginPage1;
     }
 
     public BasePage login(String username, String password) {
