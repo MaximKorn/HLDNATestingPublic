@@ -13,13 +13,13 @@ public class LoginPage extends BasePage
     public LoginPage enterUsername(String login)
     {
         $x("//input[@placeholder='Имя пользователя']").setValue(login);
-        return this;
+        return page(LoginPage.class);
     }
 
     public LoginPage enterPassword(String pass)
     {
         $x("//input[@placeholder='Пароль']").setValue(pass);
-        return this;
+        return page(LoginPage.class);
     }
 
     public BasePage pressSubmitButton()

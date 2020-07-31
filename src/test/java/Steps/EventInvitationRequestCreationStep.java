@@ -9,9 +9,9 @@ public class EventInvitationRequestCreationStep {
 
     EventInvitationRequestCreationPage eventInvitationRequestCreationPage;
 
-    public EventInvitationRequestCreationStep()
+    public EventInvitationRequestCreationStep(EventInvitationRequestCreationPage eventInvitationRequestCreationPage1)
     {
-        eventInvitationRequestCreationPage = page(EventInvitationRequestCreationPage.class);
+        eventInvitationRequestCreationPage = eventInvitationRequestCreationPage1;
     }
 
 

@@ -1,12 +1,19 @@
 package Tests;
 
 import Pages.BasePage;
+import Pages.EventInvitationRequestCreationPage;
+import Pages.LoginPage;
+import Pages.RequestsListPage;
 import Steps.*;
+import Steps.LoginStep;
+import Steps.BaseStep;
+import static Steps.LoginStep.*;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideDriver;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import org.junit.Before;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.javatuples.Pair;
 
@@ -17,6 +24,7 @@ import java.util.Calendar;
 import static Utils.UtilsCSV.csvUserData;
 import static Utils.UtilsCSV.readCSV;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.page;
 
 public class UserTests extends BaseTest {
     CSVReader reader;
@@ -38,40 +46,11 @@ public class UserTests extends BaseTest {
 
     @Before
     public void beforeMethod() throws IOException, CsvValidationException {
-        baseStep = new BaseStep();
-        loginStep = new LoginStep();
-        requestListStep = new RequestListStep();
-        eventInvitationRequestStep = new EventInvitationRequestStep();
-        eventInvitationRequestCreationStep = new EventInvitationRequestCreationStep();
-
-//        reader = readCSV(csvUserData);
-//        for (int i = 0; i < 3; i++) {
-//            userData[i] = reader.readNext();
-//        }
-//        initiatorUserData.add(userData[0][0], userData[0][1]);
-//        headOfDivisionUserData.add(userData[1][0], userData[1][1]);
-//        headOfComplianceUserData.add(userData[2][0], userData[2][1]);
-//
-//        eventName = "Тестовое Мероприятие";
-//        eventTheme = "Тестовая Тема";
-//        senderOrganization = "ООО \"Медведь Абакан\"";
-//        inviterName = "Иванов Андрей Петрович";
-//        eventStartDate = dateFormat.format(Calendar.DATE + 7);
-//        eventEndDate = dateFormat.format(Calendar.DATE + 8);
-//        invitationResponseDeadline = dateFormat.format(Calendar.DATE + 3);
-//        eventProgram = "Тестовая программа мероприятия";
-//        country = "Россия";
-//        city = "Воронеж";
-//        address = "Московский проспект, 1";
-//        commentCreation = "Тестовый комментарий";
-//        commentApproval = "Тестовый одобрительный комментарий";
-//
-//        Configuration.timeout = 8000;
-//        open(baseUrl);
-    }
-
-    @Test
-    public void requestCreationAndApprovalTest() throws IOException, CsvValidationException {
+//        baseStep = new BaseStep();
+//        loginStep = new LoginStep();
+//        requestListStep = new RequestListStep();
+//        eventInvitationRequestStep = new EventInvitationRequestStep();
+//        eventInvitationRequestCreationStep = new EventInvitationRequestCreationStep();
 
         reader = readCSV(csvUserData);
         for (int i = 0; i < 3; i++) {
@@ -96,15 +75,25 @@ public class UserTests extends BaseTest {
         commentApproval = "Тестовый одобрительный комментарий";
 
         Configuration.timeout = 8000;
-        open(baseUrl);
+    }
+
+    @Test
+    public void requestCreationAndApprovalTest() throws IOException, CsvValidationException {
+
+
+       LoginPage loginPage = open(baseUrl, LoginPage.class);
+       loginStep = new LoginStep(loginPage);
 
         // Действия пользователя с ролью Initiator
         BasePage basePage = loginStep
                 .login(initiatorUserData.getValue0(), initiatorUserData.getValue1());
-        baseStep
+        baseStep = new BaseStep(basePage);
+        RequestsListPage requestsListPage = baseStep
                 .goToRequestListPage();
-        requestListStep
+        requestListStep = new RequestListStep(requestsListPage);
+        EventInvitationRequestCreationPage eventInvitationRequestCreationPage = requestListStep
                 .addEventInvitationRequest();
+
         eventInvitationRequestCreationStep
                 .fillInEventInvitationRequest(eventName, eventTheme, senderOrganization, inviterName,
                         eventStartDate, eventEndDate, invitationResponseDeadline,
