@@ -1,9 +1,6 @@
 package Tests;
 
-import Pages.BasePage;
-import Pages.EventInvitationRequestCreationPage;
-import Pages.LoginPage;
-import Pages.RequestsListPage;
+import Pages.*;
 import Steps.*;
 import Steps.LoginStep;
 import Steps.BaseStep;
@@ -13,6 +10,7 @@ import com.codeborne.selenide.SelenideDriver;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import org.junit.Before;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.javatuples.Pair;
@@ -44,7 +42,7 @@ public class UserTests extends BaseTest {
             eventStartDate, eventEndDate, invitationResponseDeadline,
             eventProgram, country, city, address, commentCreation, commentApproval;
 
-    @Before
+    @BeforeMethod
     public void beforeMethod() throws IOException, CsvValidationException {
 //        baseStep = new BaseStep();
 //        loginStep = new LoginStep();
@@ -79,7 +77,29 @@ public class UserTests extends BaseTest {
 
     @Test
     public void requestCreationAndApprovalTest() throws IOException, CsvValidationException {
-
+//        reader = readCSV(csvUserData);
+//        for (int i = 0; i < 3; i++) {
+//            userData[i] = reader.readNext();
+//        }
+//        initiatorUserData = new Pair<>(userData[0][0], userData[0][1]);
+//        headOfDivisionUserData = new Pair<>(userData[1][0], userData[1][1]);
+//        headOfComplianceUserData = new Pair<>(userData[2][0], userData[2][1]);
+//
+//        eventName = "Тестовое Мероприятие";
+//        eventTheme = "Тестовая Тема";
+//        senderOrganization = "ООО \"Медведь Абакан\"";
+//        inviterName = "Иванов Андрей Петрович";
+//        eventStartDate = dateFormat.format(Calendar.DATE + 7);
+//        eventEndDate = dateFormat.format(Calendar.DATE + 8);
+//        invitationResponseDeadline = dateFormat.format(Calendar.DATE + 3);
+//        eventProgram = "Тестовая программа мероприятия";
+//        country = "Россия";
+//        city = "Воронеж";
+//        address = "Московский проспект, 1";
+//        commentCreation = "Тестовый комментарий";
+//        commentApproval = "Тестовый одобрительный комментарий";
+//
+//        Configuration.timeout = 8000;
 
        LoginPage loginPage = open(baseUrl, LoginPage.class);
        loginStep = new LoginStep(loginPage);
@@ -93,15 +113,21 @@ public class UserTests extends BaseTest {
         requestListStep = new RequestListStep(requestsListPage);
         EventInvitationRequestCreationPage eventInvitationRequestCreationPage = requestListStep
                 .addEventInvitationRequest();
+        eventInvitationRequestCreationStep = new EventInvitationRequestCreationStep(eventInvitationRequestCreationPage);
 
         eventInvitationRequestCreationStep
                 .fillInEventInvitationRequest(eventName, eventTheme, senderOrganization, inviterName,
                         eventStartDate, eventEndDate, invitationResponseDeadline,
                         eventProgram, country, city, address);
-        String requestNumber = eventInvitationRequestStep
+
+        String requestNumber = eventInvitationRequestCreationStep
                 .rememberCreatedRequestNumber();
-        eventInvitationRequestCreationStep
+
+        EventInvitationRequestPage eventInvitationRequestPage = eventInvitationRequestCreationStep
                 .sendCreatedRequestToApproval(commentCreation);
+
+        eventInvitationRequestStep = new EventInvitationRequestStep(eventInvitationRequestPage);
+
         eventInvitationRequestStep
                 .checkApprovalRequestFirstStepResult();
         baseStep

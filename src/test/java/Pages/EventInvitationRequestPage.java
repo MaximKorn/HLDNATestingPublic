@@ -7,9 +7,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class EventInvitationRequestPage extends BasePage {
-    public String getRequestNumber() {
-        return $x("//div[@data-md-name='CODE']/div[@class='card-col-item']").getText();
-    }
+
 
     public EventInvitationRequestPage pressApprovalButton() {
         $x("//a[text()='Согласование']").click();

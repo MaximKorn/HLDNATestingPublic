@@ -47,8 +47,4 @@ public class EventInvitationRequestStep {
                 .checkApprovalFinalStatus(3);
     }
 
-    public String rememberCreatedRequestNumber()
-    {
-        return eventInvitationRequestPage.getRequestNumber();
-    }
 }

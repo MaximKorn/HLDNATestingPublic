@@ -12,14 +12,14 @@ public class RequestsListPage extends BasePage {
     //private SelenideElement searchRequestInput = $x("//input[@title='Поиск в представлении']");
     //private SelenideElement firstRequestInListButton = $x("//td[@headers='C40317615269586202']/a");
 
-    public EventInvitationRequestCreationPage pressAddRequestButton() {
+    public RequestsListPage pressAddRequestButton() {
         $x("//button[@value='Добавить']").click();
-        return page(EventInvitationRequestCreationPage.class);
+        return this;
     }
 
-    public RequestsListPage pressEventInvitationButton() {
+    public EventInvitationRequestCreationPage pressEventInvitationButton() {
         $x("//a[text()='Приглашение на мероприятие']").click();
-        return this;
+        return page(EventInvitationRequestCreationPage.class);
     }
 
     public RequestsListPage selectPrimaryReportOption() {
