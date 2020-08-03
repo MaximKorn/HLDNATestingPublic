@@ -1,0 +1,382 @@
+<html class="no-js" lang="ru"><!--<![endif]--><head>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить заявку</title>
+    <!-- HEAD -->
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="-1"><meta http-equiv="Cache-Control" content="no-cache">
+    <!-- FAVICONS -->
+    <link href="/app4096/ico/header/ico/logo.ico" rel="shortcut icon">
+    <!-- APEX CSS -->
+    <link rel="stylesheet" href="/i/app_ui/css/Core.min.css?v=5.1.3.00.05" type="text/css">
+<link rel="stylesheet" href="/i/app_ui/css/Theme-Standard.min.css?v=5.1.3.00.05" type="text/css">
+<link rel="stylesheet" href="/i/libraries/jquery-ui/1.10.4/themes/base/jquery-ui.min.css?v=5.1.3.00.05" type="text/css">
+
+    <!-- APPLICATION CSS -->
+    <link rel="stylesheet" href="/app/hldna/css/minified/oberon.min.css?v=5.0.0.884" type="text/css">
+
+    <!-- THEME CSS -->
+    <link rel="stylesheet" href="/i/libraries/font-awesome/4.5.0/css/font-awesome.min.css?v=5.1.3.00.05" type="text/css">
+
+    <!-- TEMPLATE CSS -->
+    
+    <!-- THEME STYLE CSS -->
+    
+    <!-- PAGE CSS -->
+    <style type="text/css">
+.page-default {
+    min-width: 1200px;
+}
+
+.apex-col {
+    max-width: 50%;
+}
+
+[data-instance-name="REQ_EVENT_DETAILS"] .item-required-icon {
+    display: none;
+}
+
+/*[data-instance-name="REQ_EVENT_DETAILS"] .region-message { */
+.card-simple .region-message {    
+    display: none;
+    margin: .25rem 0 .25rem 1rem;
+}
+
+[data-md-name="EXPENSES_CONFIRMATION"] .region-message {
+    display: block;
+}
+
+[data-md-name="BUSINESS_PARTNER"] .item-required-icon,
+[data-md-name="PRIVATE_GIFT"] .item-required-icon {
+    display: none;
+}
+
+[data-md-name="ACCOMPANY"] .card-col-item,
+[data-md-name="EXPENSE_OTHER"] .card-col-item {
+    display: flex;
+    align-items: center;
+}
+
+[data-mode="RO"][data-md-name="EVENT_PROGRAM"] .card-col-item {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#gift-parts .tr {
+    vertical-align: top;
+}
+
+.nodatafound {
+    display: none;
+}
+
+#gift-parts .th[data-alias="UNDEFINED_COST"] {
+    width: 4rem;
+}
+
+#gift-parts .th[data-alias="COST"] {
+    width: 10rem;
+}
+
+#gift-photo {
+    text-align: left;
+    margin-left: 1rem;
+}
+</style>
+
+    <!--[if lt IE 9]><script src="/i/libraries/apex/minified/html5_ie.min.js"></script><![endif]-->
+</head>
+<body class="page-default   apex-top-nav apex-icons-fontawesome apex-no-scroll" style="width: 1333px;">
+<form action="wwv_flow.accept" method="post" name="wwv_flow" id="wwvFlowForm" novalidate="" autocomplete="off">
+<input type="hidden" name="p_flow_id" value="210" id="pFlowId"><input type="hidden" name="p_flow_step_id" value="3430" id="pFlowStepId"><input type="hidden" name="p_instance" value="13373205899080" id="pInstance"><input type="hidden" name="p_page_submission_id" value="107106683157936298414275762929190788404" id="pPageSubmissionId"><input type="hidden" name="p_request" value="" id="pRequest"><input type="hidden" name="p_reload_on_submit" value="A" id="pReloadOnSubmit"><input type="hidden" value="107106683157936298414275762929190788404" id="pSalt">
+<header class="page-header">
+    <div class="apex-after-header"><input type="hidden" id="P3430_REQ_ID" name="P3430_REQ_ID" value=""><input type="hidden" id="P3430_ACTION" name="P3430_ACTION" value="ADD"><input type="hidden" data-for="P3430_ACTION" value="kPH-cD2OeseposbJRVdtXmGXBXpKU0gzTF26jQbF7XloTaPOka5UExXyZ9zegxctEqwpfITORNgO4wTSX7B9Gw"><input type="hidden" id="P3430_MODE" name="P3430_MODE" value="RW"><input type="hidden" data-for="P3430_MODE" value="Hlf1Vn2KB1d9Qc2M3fe450T6wlG6f0AD1P0kG-4X_BdK-V-0_RoAyI-aeiDq5zyY5ZFf6hfxTnlkhXirEorokQ"><input type="hidden" id="P3430_SENDER_PERSON_TYPE" name="P3430_SENDER_PERSON_TYPE" value="386627441142"><input type="hidden" data-for="P3430_SENDER_PERSON_TYPE" value="SbkMLDPW_0agkm5mmR6Y-muMSU88GpCXLlgdbNX-CXl9voZ1CcOIad1WFGx4mwgHWkrdjkuXO0ocpc2tpVvqFg"><input type="hidden" id="P3430_REQ_CLASS_ID" name="P3430_REQ_CLASS_ID" value="386635621142"><input type="hidden" data-for="P3430_REQ_CLASS_ID" value="Nn2HdPvDX3XTqJyoPOsciBYbuhCj4hUZq6kgIetp3JprSbPQ8jr8dHIf1GYmfbYtcKNkMdj9ElD3KAqlkd9Vjg"><input type="hidden" id="P3430_PERSON_IDS" name="P3430_PERSON_IDS" value=""><input type="hidden" id="GR_INST" name="GR_INST" value=""><input type="hidden" id="GR_ID" name="GR_ID" value=""><input type="hidden" id="GR_TAB" name="GR_TAB" value=""><input type="hidden" id="GR_PAR" name="GR_PAR" value=""><input type="hidden" id="GR_LEVEL" name="GR_LEVEL" value=""><input type="hidden" id="GR_ROW_INFO" name="GR_ROW_INFO" value=""><input type="hidden" id="GR_PAGE_SUBMISSION" name="GR_PAGE_SUBMISSION" value=""><input type="hidden" id="GLB_NAV_ID" name="GLB_NAV_ID" value="23320000"><input type="hidden" id="GLB_NAV_ROOT_ID" name="GLB_NAV_ROOT_ID" value="23310000"><input type="hidden" id="GLB_GLOBAL_DATE" name="GLB_GLOBAL_DATE" value="">    </div>
+    <div class="region01"><div class="app-controls"><a class="app-link support-link" target="_blank" href="/oberon/doc/HLDNA.Support_Contacts.2020.01.14.pdf">Техническая поддержка</a><div class="app-lang btn-group app-control" title="Сменить язык интерфейса"><button type="button" class="btn" data-code="en"><i class="btn-icon icon-lang-en"></i><span class="btn-label">en</span></button><button type="button" class="btn btn--active" data-code="ru"><i class="btn-icon icon-lang-ru"></i><span class="btn-label">ru</span></button></div><a class="app-link app-profile-link" title="Профиль пользователя (Ролевая группа: )" href="f?p=210:REDIRECT:13373205899080::NO::P2_REGION_SHOW_ARRAY,GLB_REDIRECT_PAGE:,2&amp;cs=3vNs98N_I28hGMWAhYdZ5l_-aNiMZt5p31lUVs8BtVmDMl1Nq_QLurrIm7uOncD7LtUNOzpg8X_gsD1uJX7AoqA">Сергей Немцев</a><a class="app-logout app-link" title="Выход из приложения" href="f?p=210:102:13373205899080::NO:::">Выйти</a></div></div>
+    <nav class="navigator"> <div class="a-MenuBar a-MenuBar--overflow a-MenuBar--tabs" id="3430_menubar" tabindex="-1" role="menubar"><ul><li id="3430_menubar_0" class="a-MenuBar-item a-Menu--current"><button type="button" role="menuitem" class="a-MenuBar-label" id="3430_menubar_0i" aria-haspopup="true">Compliance <span class="u-VisuallyHidden">current</span></button><div id="3430_menubar_0m" class="a-Menu a-Menu--top" role="menu" tabindex="-1" style="display:none;"></div></li><li id="3430_menubar_1" class="a-MenuBar-item"><button type="button" role="menuitem" class="a-MenuBar-label" id="3430_menubar_1i" tabindex="-1" aria-haspopup="true">Профили</button><div id="3430_menubar_1m" class="a-Menu a-Menu--top" role="menu" tabindex="-1" style="display:none;"></div></li><li id="3430_menubar_2" class="a-MenuBar-item"><button type="button" role="menuitem" class="a-MenuBar-label" id="3430_menubar_2i" tabindex="-1" aria-haspopup="true">Информация о партнерах</button><div id="3430_menubar_2m" class="a-Menu a-Menu--top" role="menu" tabindex="-1" style="display:none;"></div></li><li id="3430_menubar_3" class="a-MenuBar-item"><button type="button" role="menuitem" class="a-MenuBar-label" id="3430_menubar_3i" tabindex="-1" aria-haspopup="true">Настройки</button><div id="3430_menubar_3m" class="a-Menu a-Menu--top" role="menu" tabindex="-1" style="display:none;"></div></li><li id="3430_menubar_4" class="a-MenuBar-item"><button type="button" role="menuitem" class="a-MenuBar-label" id="3430_menubar_4i" tabindex="-1" aria-haspopup="true">Обучение</button><div id="3430_menubar_4m" class="a-Menu a-Menu--top" role="menu" tabindex="-1" style="display:none;"></div></li><li id="3430_menubar_5" class="a-MenuBar-item"><button type="button" role="menuitem" class="a-MenuBar-label" id="3430_menubar_5i" tabindex="-1" aria-haspopup="true">Справка</button><div id="3430_menubar_5m" class="a-Menu a-Menu--top" role="menu" tabindex="-1" style="display:none;"></div></li></ul></div></nav>
+    <div class="region02"></div>
+    <hgroup class="page-header-group">
+        <h1 id="page-header1">Добавить заявку</h1>
+        <h2 id="page-header2"></h2>
+        <h3 id="page-header3"></h3>
+    </hgroup>
+</header>
+<main class="page-main">
+    <header class="page-main-header region07"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="f?p=210:2920:13373205899080:BCBACK1:NO::P2920_BC:BC531280">Заявки Compliance</a></li><li class="breadcrumb-item">Добавить заявку</li></ol><input type="hidden" value="BC531280" id="P3430_BC" name="P3430_BC"><nav id="R40321282071586238" data-region-id="R40321282071586238" class="region-nav "><ul class="nav nav-tabs nav-align-top"><li class="nav-item"><a class="nav-link active" href="javascript:void(0);">Общая информация</a></li></ul>
+</nav></header>
+    <section class="page-main-container">
+        <aside class="page-main-left region05"></aside>
+        <section class="page-main-center">
+            <article class="page-body">
+                <aside class="page-body-left region06"><div class="region-toolbar" id="R65671276640583880"><button id="B40207709140666045" value="Отмена" onclick="apex.submit({request:'B_CANCEL'});" class="btn btn-undo" type="button" title="Отмена"><i class="btn-icon "></i><span class="btn-label">Отмена</span></button><button id="B39999270185455607" value="Сохранить" onclick="void(0);" class="btn btn-hot btn-save" type="button" title="Сохранить"><i class="btn-icon "></i><span class="btn-label">Сохранить</span></button></div>
+</aside>
+                <header class="page-body-header region04"></header>
+                <section class="page-body-content apex-body"><div id="R42001387687586904" class="">
+<article id="R42001495440586905" data-region-id="R42001495440586905" class="region ">
+    <header class="region-header">
+        <h3 class="region-title">Мероприятие</h3>
+        <div class="region-buttons"></div>
+    </header>
+    <section class="region-body">
+        <i class="region-icon "></i>
+        <div class="region-content"><div class="card-simple" data-instance-id="166471142" data-instance-name="REQ_EVENT" data-page-id="3430" data-ref-id="387133531142" data-ref-name="DNA_COMPL_REQ_INVITE_G" data-entry-id=""><div class="card-row-item required" data-mode="RW" data-id="166511142" data-md-id="387133821142" data-md-name="AUTHOR_ID"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="387133821142"><i class="item-required-icon"></i><label for="card-item-0001" class="card-label">Инициатор</label></div><div class="card-col-item"><select id="card-item-0001" name="f03"><option selected="" value=""></option><option value="360024640042">Немцев Сергей Вячеславич</option><option value="360025030042">Козлова Мария Сергеевна</option></select></div></div>
+<div class="card-row-item required" data-mode="RW" data-id="166551142" data-md-id="387133851142" data-md-name="NAME"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="387133851142"><i class="item-required-icon"></i><label for="card-item-0002" class="card-label">Название мероприятия</label></div><div class="card-col-item"><input type="text" name="f03" size="20" maxlength="2000" value="" id="card-item-0002"></div></div>
+<div class="card-row-item required" data-mode="RW" data-id="166561142" data-md-id="387133861142" data-md-name="EVENT_REASON"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="387133861142"><i class="item-required-icon"></i><label for="card-item-0003" class="card-label">Тема мероприятия</label></div><div class="card-col-item"><input type="text" name="f03" size="20" maxlength="2000" value="" id="card-item-0003"></div></div>
+<div class="card-row-item required card-row-label-extra" data-mode="RW" data-id="166571142" data-md-id="387133871142" data-md-name="ORG_TYPE_ID"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="387133871142"><i class="item-required-icon"></i><label for="card-item-0004" class="card-label">Тип организации</label><i class="icon-help" title="Помощь" onclick="hint.show(this)" data-code="card_simple" data-p1="166571142"></i></div><div class="card-col-item"><select id="card-item-0004" name="f03"><option selected="" value=""></option><option value="386627491142">Государственный орган</option><option value="386636981142">Индивидуальный предприниматель</option><option value="386740751142">Коммерческая организация</option><option value="387214291142">Компания с участием гос. капитала &gt; 50 %</option><option value="386636971142">Компания с участием гос. капитала ≤ 50 %</option><option value="386636961142">Некоммерческая организация</option><option value="388052931142">Представительство иностранного государства в России</option><option value="386627441142">Частное лицо</option></select></div></div>
+<div class="card-row-item required card-row-label-extra" data-mode="RW" data-id="166581142" data-md-id="387133881142" data-md-name="SENDER_ORG_ID"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="387133881142"><i class="item-required-icon"></i><label for="card-item-0005" class="card-label">Приглашающая сторона</label><i class="icon-help" title="Помощь" onclick="hint.show(this)" data-code="card_simple" data-p1="166581142"></i></div><div class="card-col-item"><div class="item-search-lov item-search--corr" data-lov-type="legal"><input type="hidden" name="f03" value="" class="item-search-val" data-param="" data-display="" data-input=""><input type="text" value="" size="" class="item-search-display"><button type="button" class="btn btn-search-lov" title="Поиск"><i class="btn-icon fa fa-bank"></i></button></div></div></div>
+<div class="card-row-item" data-mode="RW" data-id="171731142" data-md-id="388053321142" data-md-name="INVITE_PERSON"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="388053321142"><label for="card-item-0006" class="card-label">ФИО приглашающего</label></div><div class="card-col-item"><input type="text" name="f03" size="20" maxlength="2000" value="" id="card-item-0006"></div></div>
+<div class="card-row-item" data-mode="RW" data-id="171721142" data-md-id="388053091142" data-md-name="PARTNERSHIP_FORM"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="388053091142"><label for="card-item-0007" class="card-label">Форма партнерства</label></div><div class="card-col-item"><select id="card-item-0007" name="f03"><option value=""></option><option value="388053031142">Дилер</option><option value="388053001142">Сервис-провайдер</option><option value="388053021142">Партнерство</option><option value="388053011142">Дипломатическая миссия</option></select></div></div>
+<div class="card-row-item required" data-mode="RW" data-id="166591142" data-md-id="387133891142" data-md-name="START_DATE_PLAN"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="387133891142"><i class="item-required-icon"></i><label for="card-item-0008" class="card-label">Дата начала мероприятия</label></div><div class="card-col-item"><span style="white-space: nowrap;"><input type="text" id="card-item-0008" name="f03" maxlength="2000" size="10" value="" autocomplete="off" class="hasDatepicker"><button type="button" class="ui-datepicker-trigger a-Button a-Button--calendar"><span class="a-Icon icon-calendar"></span><span class="u-VisuallyHidden">Выбрать дату в календаре<span></span></span></button></span></div></div>
+<div class="card-row-item required" data-mode="RW" data-id="166601142" data-md-id="387133901142" data-md-name="END_DATE_PLAN"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="387133901142"><i class="item-required-icon"></i><label for="card-item-0009" class="card-label">Дата окончания мероприятия</label></div><div class="card-col-item"><span style="white-space: nowrap;"><input type="text" id="card-item-0009" name="f03" maxlength="2000" size="10" value="" autocomplete="off" class="hasDatepicker"><button type="button" class="ui-datepicker-trigger a-Button a-Button--calendar"><span class="a-Icon icon-calendar"></span><span class="u-VisuallyHidden">Выбрать дату в календаре<span></span></span></button></span></div></div>
+<div class="card-row-item card-row-label-extra" data-mode="RW" data-id="166611142" data-md-id="387133931142" data-md-name="FEEDBACK_DATE"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="387133931142"><label for="card-item-0010" class="card-label">Дедлайн по ответу на приглашение</label><i class="icon-help" title="Помощь" onclick="hint.show(this)" data-code="card_simple" data-p1="166611142"></i></div><div class="card-col-item"><span style="white-space: nowrap;"><input type="text" id="card-item-0010" name="f03" maxlength="2000" size="10" value="" autocomplete="off" class="hasDatepicker"><button type="button" class="ui-datepicker-trigger a-Button a-Button--calendar"><span class="a-Icon icon-calendar"></span><span class="u-VisuallyHidden">Выбрать дату в календаре<span></span></span></button></span></div></div>
+<div class="card-row-item card-row-label-extra" data-mode="RW" data-id="166631142" data-md-id="387133941142" data-md-name="EVENT_PROGRAM"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="387133941142"><label for="card-item-0011" class="card-label">Программа мероприятия</label><i class="icon-help" title="Помощь" onclick="hint.show(this)" data-code="card_simple" data-p1="166631142"></i></div><div class="card-col-item"><textarea name="f03" rows="4" cols="40" wrap="VIRTUAL" id="card-item-0011"></textarea></div></div>
+<div class="card-row-group" data-mode="RW" data-id="166651142" data-md-id="387133541142" data-md-name=""><div class="card-col-group"><span class="card-group">Место проведения мероприятия</span></div></div>
+<div class="card-row-item card-level-2 required" data-mode="RW" data-id="166661142" data-md-id="387133551142" data-md-name="COUNTRY"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="387133551142"><i class="item-required-icon"></i><label for="card-item-0012" class="card-label">Страна</label></div><div class="card-col-item"><input type="text" name="f03" size="20" maxlength="2000" value="" id="card-item-0012"></div></div>
+<div class="card-row-item card-level-2 required" data-mode="RW" data-id="166671142" data-md-id="387133561142" data-md-name="CITY"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="387133561142"><i class="item-required-icon"></i><label for="card-item-0013" class="card-label">Город</label></div><div class="card-col-item"><input type="text" name="f03" size="20" maxlength="2000" value="" id="card-item-0013"></div></div>
+<div class="card-row-item card-level-2 required" data-mode="RW" data-id="166681142" data-md-id="387133571142" data-md-name="ADDRESS"><div class="card-col-label"><input type="hidden" name="f01" value="166471142"><input type="hidden" name="f02" value="387133571142"><i class="item-required-icon"></i><label for="card-item-0014" class="card-label">Адрес</label></div><div class="card-col-item"><input type="text" name="f03" size="20" maxlength="2000" value="" id="card-item-0014"></div></div>
+</div>
+</div>
+    </section>
+</article>
+</div></section>
+            </article>
+        </section>
+        <aside class="page-main-right region08"></aside>
+    </section>
+    <footer class="page-main-footer region03"></footer>
+</main>
+<footer class="page-footer">
+    <div class="apex-after-footer">    </div>
+</footer>
+<input type="hidden" id="pPageItemsRowVersion" value=""><input type="hidden" id="pPageItemsProtected" value="PdIaxokV8i-Yhsitq8ew9THxU87FwXdl5fpaLIMj1PYDsLQX_GgT4cNigaZOfz1cv1jVzRIO6R5TlE1E4nvgUYIo2a0cH8FhvlAjXzUIa6M"></form>
+		
+<!-- APEX JAVASCRIPT -->
+
+<script type="text/javascript">
+var apex_img_dir = "/i/", htmldb_Img_Dir = apex_img_dir;
+</script>
+<!--[if lt IE 9]><script type="text/javascript" src="/i/libraries/jquery/1.12.3/jquery-1.12.3.min.js?v=5.1.3.00.05"></script><![endif]-->
+<!--[if gte IE 9]><!--><script type="text/javascript" src="/i/libraries/jquery/2.2.3/jquery-2.2.3.min.js?v=5.1.3.00.05"></script><!--<![endif]-->
+<script type="text/javascript" src="/i/libraries/apex/minified/desktop.min.js?v=5.1.3.00.05"></script>
+<script type="text/javascript" src="wwv_flow.js_messages?p_app_id=210&amp;p_lang=ru&amp;p_version=5.1.3.00.05-1152607714073"></script>
+
+<!-- GENERATED CSS Only after APEX JAVASCRIPT -->
+		<script type="text/javascript">
+apex.da.initDaEventList = function(){
+apex.da.gEventList = [
+{"triggeringElementType":"BUTTON","triggeringButtonId":"B39999270185455607","bindType":"bind","bindEventType":"click","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:function (){ oberon.submitAjax('B_SAVE');
+},"action":"NATIVE_JAVASCRIPT_CODE"}]},
+{"triggeringElementType":"REGION","triggeringRegionId":"gift-parts","bindType":"bind","bindEventType":"apexafterclosedialog","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,"affectedElementsType":"REGION","affectedRegionId":"gift-parts",javascriptFunction:apex.da.refresh,"action":"NATIVE_REFRESH"},{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:function (){ oberon.submitAjax('B_SAVE');
+},"action":"NATIVE_JAVASCRIPT_CODE"}]},
+{"triggeringElementType":"BUTTON","triggeringButtonId":"B40206475569666032","bindType":"bind","bindEventType":"click","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:function (){ doCheckSubmitM_msg('B_DEL_GIFT_PART', delete_record, 10);
+},"action":"NATIVE_JAVASCRIPT_CODE"}]},
+{"triggeringElementType":"BUTTON","triggeringButtonId":"B42002310092586914","bindType":"bind","bindEventType":"apexafterclosedialog","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,"waitForResult":true,"affectedElementsType":"ITEM","affectedElements":"P3430_PERSON_IDS",javascriptFunction:apex.da.setValue,"ajaxIdentifier":"gpXVw_4f4VRDvm0Qf3l7Ptw4WwpBLCcdmswgjuiAReU","attribute01":"DIALOG_RETURN_ITEM","attribute09":"N","attribute10":"P3435_IDS","action":"NATIVE_SET_VALUE"},{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,"waitForResult":true,javascriptFunction:apex.da.executePlSqlCode,"ajaxIdentifier":"TC0vQufezVoK4z6fsOD1_HWZ_mD6-7vStQog3egci-Q","attribute01":"#P3430_PERSON_IDS,#P3430_REQ_ID","attribute04":"N","attribute05":"sync","action":"NATIVE_EXECUTE_PLSQL_CODE"},{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,"affectedElementsType":"REGION","affectedRegionId":"EVENT_PERSONS",javascriptFunction:apex.da.refresh,"action":"NATIVE_REFRESH"}]},
+{"triggeringElementType":"JQUERY_SELECTOR","triggeringElement":".request-proc-action","bindType":"bind","bindEventType":"apexafterclosedialog","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:apex.da.submitPage,"attribute02":"Y","action":"NATIVE_SUBMIT_PAGE"}]},
+{"triggeringElementType":"BUTTON","triggeringButtonId":"B42002518801586916","bindType":"bind","bindEventType":"click","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:function (){ doCheckSubmitM('B_DELETE_PERSON', delete_record, 10);
+},"action":"NATIVE_JAVASCRIPT_CODE"}]}];
+}
+</script>
+<link rel="stylesheet" href="/oberon/css/card_simple.css" type="text/css">
+
+<!-- APPLICATION JAVASCRIPT -->
+<script type="text/javascript" src="/app/hldna/builder/node_modules/toastr/build/toastr.min.js?v=5.0.0.884"></script>
+<script type="text/javascript" src="/app/hldna/js/core/dist/minified/oberon.all.min.js?v=5.0.0.884"></script>
+
+<!-- THEME JAVASCRIPT -->
+
+<!-- TEMPLATE JAVASCRIPT -->
+
+<!-- PAGE JAVASCRIPT -->
+
+<!-- GENERATED JAVASCRIPT -->
+		<script type="text/javascript" src="/oberon/js/oberon.i18n.js"></script>
+<script type="text/javascript" src="/oberon/js/card_simple.js"></script>
+<script type="text/javascript" src="/oberon/js/item.searchLov.js?v=1.0.2"></script>
+<script type="text/javascript" src="/i/libraries/jquery-ui/1.10.4/ui/i18n/oracle/jquery.ui.datepicker-ru.js?v=5.1.3.00.05"></script>
+<script type="text/javascript" src="/i/libraries/apex/minified/widget.datepicker.min.js?v=5.1.3.00.05"></script>
+<script type="text/javascript">
+var GLOBAL = {
+OWNER:"I_HLDNA"
+,APP_USER:"A020_DVRUNMT"
+,AUTH_USER_ID:"164031142_5439F0FE6CB3E9A5C040636341817BDB"
+,APSF_ID:"4096_862EB85C061D78644053F94DDCD214CD"
+,GLB_HIGHLIGHT_COLOR:"#fff95c"
+,LANG_CODE:"ru"
+,GLB_CSS_DIR:"oberon/css"
+,GLB_DOC_DIR:"oberon/doc"
+,GLB_HTC_DIR:"oberon/htc"
+,GLB_ICO_DIR:"oberon/ico"
+,GLB_JS_DIR:"oberon/js"
+,GLB_SOFT_DIR:"oberon/soft"
+,LOC_CSS_DIR:"app4096/css"
+,LOC_DOC_DIR:"app4096/doc"
+,LOC_HTC_DIR:"app4096/htc"
+,LOC_ICO_DIR:"app4096/ico"
+,LOC_JS_DIR:"app4096/js"
+,LOC_SOFT_DIR:"app4096/soft"
+,GLB_EXT:"png"
+,APP_ID:"210"
+,CARD_PAGE_WIDTH:""
+,CARD_PAGE_HEIGHT:""
+}
+Report.customize.rid=[];
+FS.values=[];
+FAVEX.values=[];
+Report.customize.active="";
+oberon.item.searchLov.init({instance:"legal",apexEval:'javascript:apex.navigation.dialog(\u0027f?p=210:2931:13373205899080:SEARCH:NO::P2931_INPUT,P2931_RESULT_ID,P2931_MODE:P2931_INPUT_VAL,P2931_RESULT_ID_VAL,legal\u005Cu0026p_dialog_cs=UDewjk3-UJigoBJ4dAryYHjzkQT1zr0kEUluyQHhfWziHdg4k3bB3Gz1FapSDkbjzI2trEd5w3xpbQ2E9lYRPQ\u0027,{title:\u0027\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430\u0027,closeText:\u0027\u0027,height:\u0027900\u0027,width:\u002795\u005Cu0025\u0027,maxWidth:\u00272000\u0027,modal:true,dialog:null,resizable:true},\u0027\u0027,apex.jQuery(\u0027#R42001495440586905\u0027));',inputItem:"P2931_INPUT",resultItem:"P2931_RESULT_ID",inputItemVal:"P2931_INPUT_VAL",resultItemVal:"P2931_RESULT_ID_VAL",resultItemDisplay:"P2931_RESULT_LBL",});
+apex.jQuery( document ).ready( function() {
+(function(){var e = apex.jQuery("#3430_menubar", apex.gPageContext$);
+/*if (e.hasClass("js-addActions")) {
+  if ( apex.actions ) {
+    apex.actions.addFromMarkup( e );
+  } else {
+    apex.debug.warn("Include actions.js to support menu shortcuts");
+  }
+}*/
+e.menu({
+  behaveLikeTabs: true,
+  menubarShowSubMenuIcon: null,
+  slide: false,
+  menubar: true,
+  menubarOverflow: true
+});})();
+(function(){apex.widget.datepicker("#card-item-0008",{"buttonImageOnly":false,"buttonText":"\u003Cspan class=\u0022a-Icon icon-calendar\u0022\u003E\u003C\u002Fspan\u003E\u003Cspan class=\u0022u-VisuallyHidden\u0022\u003E\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0434\u0430\u0442\u0443 \u0432 \u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u0435\u003Cspan\u003E","showTime":false,"defaultDate":new Date(2020,6,27,23,26,14),"showOn":"button","showOtherMonths":false,"changeMonth":true,"changeYear":true},"dd.mm.yy","ru"); apex.jQuery('#card-item-0008').next('button').addClass('a-Button a-Button--calendar');})();
+(function(){apex.widget.datepicker("#card-item-0009",{"buttonImageOnly":false,"buttonText":"\u003Cspan class=\u0022a-Icon icon-calendar\u0022\u003E\u003C\u002Fspan\u003E\u003Cspan class=\u0022u-VisuallyHidden\u0022\u003E\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0434\u0430\u0442\u0443 \u0432 \u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u0435\u003Cspan\u003E","showTime":false,"defaultDate":new Date(2020,6,27,23,26,14),"showOn":"button","showOtherMonths":false,"changeMonth":true,"changeYear":true},"dd.mm.yy","ru"); apex.jQuery('#card-item-0009').next('button').addClass('a-Button a-Button--calendar');})();
+(function(){apex.widget.datepicker("#card-item-0010",{"buttonImageOnly":false,"buttonText":"\u003Cspan class=\u0022a-Icon icon-calendar\u0022\u003E\u003C\u002Fspan\u003E\u003Cspan class=\u0022u-VisuallyHidden\u0022\u003E\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0434\u0430\u0442\u0443 \u0432 \u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u0435\u003Cspan\u003E","showTime":false,"defaultDate":new Date(2020,6,27,23,26,14),"showOn":"button","showOtherMonths":false,"changeMonth":true,"changeYear":true},"dd.mm.yy","ru"); apex.jQuery('#card-item-0010').next('button').addClass('a-Button a-Button--calendar');})();
+(function(){apex.da.initDaEventList();})();
+(function(){apex.da.init();})();
+
+$('[data-instance-name="REQ_GIFT"]').find('[data-md-name="PHOTO"] .item-blob-val')
+.on('change', function() {
+	$('#gift-photo .apex-preview-image').remove();
+});
+
+
+(function() {
+    function toggleAttrs($e, $field, $help) {
+        if ($e.length) {
+            var isChecked = $e.prop('checked');
+            $field.toggle(isChecked);
+
+            if (isChecked) {
+                $help.show();
+            }
+        }
+    }
+    
+    var $cardEventDetails = $('[data-instance-name="REQ_EVENT_DETAILS"]');
+    var $expenseElem = $cardEventDetails.find('[data-md-name="EXPENSE_OTHER_TEXT"]');
+    var $expenseCheckbox = $cardEventDetails.find('[data-md-name="EXPENSE_OTHER"]').find('.card-col-item input[type="checkbox"]');
+    var $expenseHelp = $cardEventDetails.find('[data-md-name="EXPENSE_OTHER"]').find('.region-message');
+    
+    var $personsRegion = $('#EVENT_PERSONS');
+    // var $accompanyField = $cardEventDetails.find('[data-md-name="ACCOMPANY"]');
+    var $accompanyField = $('[data-instance-name="REQ_EVENT_PERSON"]').find('[data-md-name="ACCOMPANY"]');
+    var $accCheckbox = $accompanyField.find('input[type="checkbox"]');
+    var $accompanyHelp = $accompanyField.find('.region-message');
+    
+    toggleAttrs($expenseCheckbox, $expenseElem, $expenseHelp);
+    
+    $expenseCheckbox.change(function() {
+        toggleAttrs($(this), $expenseElem, $expenseHelp);
+    });
+    
+    toggleAttrs($accCheckbox, $personsRegion, $accompanyHelp);
+    
+    $accCheckbox.change(function() {
+        toggleAttrs($(this), $personsRegion, $accompanyHelp);
+    });
+})();
+
+
+(function() {
+    var iconReqHtml = '<i class="item-required-icon"></i>';
+    var senderPersonType = $v('P3430_SENDER_PERSON_TYPE');
+    
+    var $senderOrg = $('.card-simple [data-md-name="SENDER_ORG_ID"]');
+    var $senderPerson = $('.card-simple [data-md-name="SENDER_PERSON"], .card-simple [data-md-name="INVITE_PERSON"]');
+    var $orgTypeSelect = $('.card-simple [data-md-name="ORG_TYPE_ID"] select');
+
+    function toggleAttrs(typeId) {
+        var isPrivate = (typeId == senderPersonType);
+        var cardLabelIconSelector = '.card-col-label > .item-required-icon';
+        var $senderPersonIcon = $senderPerson.find(cardLabelIconSelector);
+
+        if (isPrivate && !$senderPersonIcon.length) {
+            $senderPersonIcon = $(iconReqHtml).insertBefore($senderPerson.find('.card-label'));
+        }
+        
+        $senderPersonIcon.toggle(isPrivate);
+        $senderOrg.toggle(!isPrivate);
+    }
+
+    toggleAttrs($orgTypeSelect.val());
+
+    $orgTypeSelect.change(function(event) {
+        toggleAttrs($(this).val());
+    });
+})();
+
+(function() {
+    var BTN_SELECTOR = '.request-proc-action';
+    var $btns = $(BTN_SELECTOR);
+    var pageMode = apex.item('P3430_MODE').getValue();
+    var reqId = apex.item('P3430_REQ_ID').getValue();
+    
+    function getInitPromise(pageMode, reqId, stepAction) {
+        var ajaxPromise;
+        
+        if (pageMode === 'RO') {
+            return $.Deferred().resolve().promise();
+        }
+        
+        return oberon.accept('B_SAVE_AJAX');
+    }
+    
+    $($btns).click(function() {
+        $btns.prop('disabled', true);
+        
+        var stepAction = $(this).attr('action-id'); 
+        
+        getInitPromise(pageMode, reqId, stepAction)
+        .then(function(data) {
+            if (data && !oberon.isSuccessAjax(data)) {
+                return $.Deferred().reject(data).promise();
+            }
+            return apex.server.process('CHECK_REQUEST', {x01: reqId, x02: stepAction});
+        })
+        .then(function(data) {
+            if (!oberon.isSuccessAjax(data)) {
+                return $.Deferred().reject(data).promise();
+            }
+        })
+        .then(function() {
+            var params = [reqId, stepAction].join(',');
+            return apex.server.process('GET_PAGE_URL', {
+                x01: '3434',
+                x02: 'P3434_REQ_ID,P3434_STEP_ACTION_ID',
+                x03: params,
+                x04: BTN_SELECTOR
+                // x04: '$("' + BTN_SELECTOR + '")'
+            });
+        })
+        .then(function(data) {
+            if (!data || !data.url) {
+                return $.Deferred().reject(data).promise();
+            }
+            eval(data.url);
+        })
+        .fail(function(data) {
+            oberon.notification.show(data);
+        })
+        .always(function() {
+            $btns.prop('disabled', false);
+        });
+    });
+})();
+apex.page.warnOnUnsavedChanges();
+});</script>
+
+	
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" tabindex="-1"></div><div class="ui-widget-overlay ui-front"></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog--apex ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-describedby="apex_dialog_1" aria-labelledby="ui-id-1" style="position: fixed; height: auto; width: 1290px; top: 30px; left: 25px; display: block; opacity: 0.175276;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span id="ui-id-1" class="ui-dialog-title">Поиск</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" aria-disabled="false" title=""><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text"></span></button></div><div id="apex_dialog_1" class="ui-dialog-content ui-widget-content" style="display: block; width: auto; min-height: 0px; max-height: none; height: 578px;"><iframe src="f?p=210:2931:13373205899080:SEARCH:NO::P2931_INPUT,P2931_RESULT_ID,P2931_MODE:,,legal&amp;p_dialog_cs=UDewjk3-UJigoBJ4dAryYHjzkQT1zr0kEUluyQHhfWziHdg4k3bB3Gz1FapSDkbjzI2trEd5w3xpbQ2E9lYRPQ" title="Поиск" width="100%" height="100%" style="min-width: 95%; height: 578px; width: 1290px;" scrolling="auto"></iframe></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div></body></html>

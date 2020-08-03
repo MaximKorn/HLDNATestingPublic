@@ -11,7 +11,6 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideDriver;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
-import org.junit.Before;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
