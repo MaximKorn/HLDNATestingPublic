@@ -3,13 +3,21 @@ package Tests;
 import static com.codeborne.selenide.Selenide.*;
 import static Utils.UtilsCSV.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
+
+//import com.codeborne.selenide.testng.GlobalTextReport;
+//import com.codeborne.selenide.testng.TextReport;
+//import com.codeborne.selenide.testng.annotations.Report;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
+//import org.testng.Reporter;
+//import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
+//@Listeners(TextReport.class)
+//@Report
 public class PagesTests extends BaseTest
 {
     @Test
@@ -20,7 +28,7 @@ public class PagesTests extends BaseTest
         String sessionId = getSessionId(url());
         loginPages(testLogin, testPassword);
         String[] res;
-        for (int i = 1; i < 201; i++)
+        for (int i = 1; i < 101; i++)
         {
             String page = Integer.toString(i);
             open(baseUrl + page + ":" + sessionId);
