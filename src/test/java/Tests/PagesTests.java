@@ -15,12 +15,14 @@ import com.opencsv.exceptions.CsvValidationException;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 //@Listeners(TextReport.class)
 //@Report
 public class PagesTests extends BaseTest
 {
-    @Test
+    @Test(enabled = false)
     public void manyPagesTest() throws IOException
     {
         CSVWriter writer = writeCSV(csvWritePages2);
@@ -46,7 +48,7 @@ public class PagesTests extends BaseTest
         writer.close();
     }
 
-    @Test
+    @Test(enabled = false)
     public void pagesTest() throws IOException, CsvValidationException
     {
         CSVReader reader = readCSV(csvReadPages);

@@ -1,37 +1,44 @@
 package Tests;
 
-import Pages.*;
+import Models.EventInvitationRequest;
+import Models.User;
 import Steps.*;
 import Steps.LoginStep;
 import Steps.BaseStep;
 
-import static Steps.LoginStep.*;
+import static Models.EventInvitationRequest.createEventInvitationRequestFromData;
+import static Models.User.createUserFromData;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideDriver;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
+import io.qameta.allure.Description;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.javatuples.Pair;
 
+import java.io.Console;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
-import static Utils.UtilsCSV.csvUserData;
-import static Utils.UtilsCSV.readCSV;
+import static Utils.UtilsCSV.*;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.page;
 
 public class UserTests extends BaseTest {
     CSVReader reader;
-    String[][] userData = new String[3][2];
-    public Pair<String, String> initiatorUserData;
-    public Pair<String, String> headOfDivisionUserData;
-    public Pair<String, String> headOfComplianceUserData;
-    SimpleDateFormat dateFormat = new SimpleDateFormat("d.MM.yyyy");
+    ArrayList<String[]> userData = new ArrayList<>();
+    ArrayList<String[]> requestData = new ArrayList<>();
+    String[] csvCell;
+    public User initiatorUserData;
+    public User headOfDivisionUserData;
+    public User headOfComplianceUserData;
+    public EventInvitationRequest eventInvitationRequest;
+    SimpleDateFormat dateFormat;
+    Calendar calendar;
+    String eventStartDate;
+    String eventEndDate;
+    String invitationResponseDeadline;
 
     public BaseStep baseStep;
     public LoginStep loginStep;
@@ -39,33 +46,36 @@ public class UserTests extends BaseTest {
     public EventInvitationRequestStep eventInvitationRequestStep;
     public EventInvitationRequestCreationStep eventInvitationRequestCreationStep;
 
-    String eventName, eventTheme, senderOrganization, inviterName,
-            eventStartDate, eventEndDate, invitationResponseDeadline,
-            eventProgram, country, city, address, commentCreation, commentApproval;
+    String commentApproval;
 
-    @BeforeMethod
+    @BeforeMethod(description = "Чтение данных из CSV-файлов. Открытие браузера")
     public void beforeMethod() throws IOException, CsvValidationException {
 
-        reader = readCSV(csvUserData);
-        for (int i = 0; i < 3; i++) {
-            userData[i] = reader.readNext();
-        }
-        initiatorUserData = new Pair<>(userData[0][0], userData[0][1]);
-        headOfDivisionUserData = new Pair<>(userData[1][0], userData[1][1]);
-        headOfComplianceUserData = new Pair<>(userData[2][0], userData[2][1]);
+        dateFormat = new SimpleDateFormat("d.MM.yyyy");
 
-        eventName = "Тестовое Мероприятие";
-        eventTheme = "Тестовая Тема";
-        senderOrganization = "ООО \"Медведь Абакан\"";
-        inviterName = "Иванов Андрей Петрович";
-        eventStartDate = dateFormat.format(Calendar.DATE + 7);
-        eventEndDate = dateFormat.format(Calendar.DATE + 8);
-        invitationResponseDeadline = dateFormat.format(Calendar.DATE + 3);
-        eventProgram = "Тестовая программа мероприятия";
-        country = "Россия";
-        city = "Воронеж";
-        address = "Московский проспект, 1";
-        commentCreation = "Тестовый комментарий";
+        reader = readCSV(csvUserData);
+        while ((csvCell = reader.readNext())!= null) {
+            userData.add(csvCell);
+        }
+
+        reader = readCSV(csvRequestData);
+        requestData.add(reader.readNext());
+        reader.close();
+
+        initiatorUserData = createUserFromData(userData.get(0));
+        headOfDivisionUserData = createUserFromData(userData.get(1));
+        headOfComplianceUserData = createUserFromData(userData.get(2));
+        calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE,3);
+        invitationResponseDeadline = dateFormat.format(calendar.getTime());
+        calendar.add(Calendar.DATE,3);
+        eventStartDate = dateFormat.format(calendar.getTime());
+        calendar.add(Calendar.DATE,3);
+        eventEndDate = dateFormat.format(calendar.getTime());
+
+        eventInvitationRequest = createEventInvitationRequestFromData(requestData.get(0), eventStartDate,
+                eventEndDate, invitationResponseDeadline);
+
         commentApproval = "Тестовый одобрительный комментарий";
 
         Configuration.timeout = 8000;
@@ -77,27 +87,26 @@ public class UserTests extends BaseTest {
         eventInvitationRequestCreationStep = new EventInvitationRequestCreationStep();
     }
 
+    @Description("Проверка создания и согласования заявки \"Приглашение на мероприятие\"")
     @Test
     public void requestCreationAndApprovalTest() {
 
         // Действия пользователя с ролью Initiator
         loginStep
-                .login(initiatorUserData.getValue0(), initiatorUserData.getValue1());
+                .login(initiatorUserData);
         baseStep
                 .goToRequestListPage();
         requestListStep
                 .addEventInvitationRequest();
 
         eventInvitationRequestCreationStep
-                .fillInEventInvitationRequest(eventName, eventTheme, senderOrganization, inviterName,
-                        eventStartDate, eventEndDate, invitationResponseDeadline,
-                        eventProgram, country, city, address);
+                .fillInEventInvitationRequest(eventInvitationRequest);
 
-        String requestNumber = eventInvitationRequestCreationStep
-                .rememberCreatedRequestNumber();
+        eventInvitationRequest.setRequestNumber(eventInvitationRequestCreationStep
+                .rememberCreatedRequestNumber());
 
         eventInvitationRequestCreationStep
-                .sendCreatedRequestToApproval(commentCreation);
+                .sendCreatedRequestToApproval(eventInvitationRequest.getCommentCreation());
 
         eventInvitationRequestStep
                 .checkApprovalRequestFirstStepResult();
@@ -106,13 +115,13 @@ public class UserTests extends BaseTest {
 
         // Действия пользователя с ролью Head of Division
         loginStep
-                .login(headOfDivisionUserData.getValue0(), headOfDivisionUserData.getValue1());
+                .login(headOfDivisionUserData);
         baseStep
                 .goToRequestListPage();
         requestListStep
                 .setPrimaryReportOption();
         requestListStep
-                .searchRequestByNumber(requestNumber);
+                .searchRequestByNumber(eventInvitationRequest.getRequestNumber());
         requestListStep
                 .chooseFoundRequest();
         eventInvitationRequestStep
@@ -124,11 +133,11 @@ public class UserTests extends BaseTest {
 
         // Действия пользователя с ролью Head of Compliance
         loginStep
-                .login(headOfComplianceUserData.getValue0(), headOfComplianceUserData.getValue1());
+                .login(headOfComplianceUserData);
         requestListStep
                 .setPrimaryReportOption();
         requestListStep
-                .searchRequestByNumber(requestNumber);
+                .searchRequestByNumber(eventInvitationRequest.getRequestNumber());
         requestListStep
                 .chooseFoundRequest();
         eventInvitationRequestStep

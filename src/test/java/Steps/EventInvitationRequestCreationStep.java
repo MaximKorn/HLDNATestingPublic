@@ -1,7 +1,9 @@
 package Steps;
 
+import Models.EventInvitationRequest;
 import Pages.EventInvitationRequestCreationPage;
 import Pages.EventInvitationRequestPage;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.page;
 
@@ -9,50 +11,47 @@ public class EventInvitationRequestCreationStep {
 
     EventInvitationRequestCreationPage eventInvitationRequestCreationPage;
 
-    public EventInvitationRequestCreationStep()
-    {
+    public EventInvitationRequestCreationStep() {
         eventInvitationRequestCreationPage = page(EventInvitationRequestCreationPage.class);
     }
 
-
-    public EventInvitationRequestCreationPage fillInEventInvitationRequest(String eventName, String eventTheme, String senderOrganization, String inviterName,
-                                                                   String eventStartDate, String eventEndDate, String invitationResponseDeadline,
-                                                                   String eventProgram, String country, String city, String address)
-    {
+    @Step("Заполнить информацию о заявке и сохраненить")
+    public EventInvitationRequestCreationPage fillInEventInvitationRequest(EventInvitationRequest request) {
         return eventInvitationRequestCreationPage
-                .selectInitiator()
-                .enterEventName(eventName)
-                .enterEventTheme(eventTheme)
-                .selectOrganizationType()
-                .enterSenderOrganization(senderOrganization)
+                .selectInitiator(request.getInitiatorName())
+                .enterEventName(request.getEventName())
+                .enterEventTheme(request.getEventTheme())
+                .selectOrganizationType(request.getOrganizationType())
+                .enterSenderOrganization(request.getSenderOrganization())
                 .pressEnterOnSenderOrganization()
                 .switchToFrame()
                 .selectFirstOrganizationInFrame()
-                .enterInviterName(inviterName)
-                .selectPartnershipForm()
-                .enterEventStartDate(eventStartDate)
-                .enterEventEndDate(eventEndDate)
-                .enterInvitationResponseDeadline(invitationResponseDeadline)
-                .enterEventProgram(eventProgram)
-                .enterCountry(country)
-                .enterCity(city)
-                .enterAddress(address)
+                .enterInviterName(request.getInviterName())
+                .selectPartnershipForm(request.getPartnershipForm())
+                .enterEventStartDate(request.getEventStartDate())
+                .enterEventEndDate(request.getEventEndDate())
+                .enterInvitationResponseDeadline(request.getInvitationResponseDeadline())
+                .enterEventProgram(request.getEventProgram())
+                .enterCountry(request.getCountry())
+                .enterCity(request.getCity())
+                .enterAddress(request.getAddress())
                 .pressSaveButton()
                 .checkDataSave()
                 .confirmExpenses();
     }
 
-    public EventInvitationRequestPage sendCreatedRequestToApproval(String comment)
-    {
+    @Step("Отправить заявку на согласование")
+    public EventInvitationRequestPage sendCreatedRequestToApproval(String comment) {
 
-        return eventInvitationRequestCreationPage  .pressSendForApprovalButton()
-            .switchToFrame()
-            .enterCommentInFrame(comment)
-            .pressSendButtonInFrame()
-            .checkOperationCompletion();
+        return eventInvitationRequestCreationPage.pressSendForApprovalButton()
+                .switchToFrame()
+                .enterCommentInFrame(comment)
+                .pressSendButtonInFrame()
+                .checkOperationCompletion();
     }
-    public String rememberCreatedRequestNumber()
-    {
+
+    @Step("Запомнить номер созданной заявки")
+    public String rememberCreatedRequestNumber() {
         return eventInvitationRequestCreationPage.getRequestNumber();
     }
 }
