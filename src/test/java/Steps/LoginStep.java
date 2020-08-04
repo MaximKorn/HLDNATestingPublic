@@ -1,7 +1,9 @@
 package Steps;
 
+import Models.User;
 import Pages.BasePage;
 import Pages.LoginPage;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.page;
 
@@ -12,10 +14,11 @@ public class LoginStep {
         loginPage = page(LoginPage.class);
     }
 
-    public BasePage login(String username, String password) {
+    @Step("Войти как пользователь {user.username} с паролем {user.password}")
+    public BasePage login(User user) {
         return loginPage
-                .enterUsername(username)
-                .enterPassword(password)
+                .enterUsername(user.getUsername())
+                .enterPassword(user.getPassword())
                 .pressSubmitButton();
     }
 }
