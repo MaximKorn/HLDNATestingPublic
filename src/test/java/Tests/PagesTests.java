@@ -3,25 +3,19 @@ package Tests;
 import static com.codeborne.selenide.Selenide.*;
 import static Utils.UtilsCSV.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
-
-//import com.codeborne.selenide.testng.GlobalTextReport;
-//import com.codeborne.selenide.testng.TextReport;
-//import com.codeborne.selenide.testng.annotations.Report;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
-//import org.testng.Reporter;
-//import org.testng.annotations.Listeners;
+
+import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
-//@Listeners(TextReport.class)
-//@Report
+
 public class PagesTests extends BaseTest
 {
+    @Description("Проверка страниц 1-200 на ошибки")
     @Test(enabled = false)
     public void manyPagesTest() throws IOException
     {
@@ -48,6 +42,7 @@ public class PagesTests extends BaseTest
         writer.close();
     }
 
+    @Description("Проверка необходимых страниц на ошибки")
     @Test(enabled = false)
     public void pagesTest() throws IOException, CsvValidationException
     {
