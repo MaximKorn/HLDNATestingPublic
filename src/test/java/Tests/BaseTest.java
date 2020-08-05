@@ -1,10 +1,7 @@
 package Tests;
 
-
-
 import Utils.CustomTestListener;
 import org.testng.annotations.Listeners;
-
 
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
@@ -58,7 +55,5 @@ public class BaseTest
         String[] id = url.substring(51,67).split(":");
         return id[0];
     }
-
-
 }
 
