@@ -8,13 +8,10 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class BasePage {
-//    public SelenideElement complianceButton = $x("//button[text()='Compliance']");
-//    public SelenideElement requestsButton = $x("//span/a[text()='Заявки']");
-//    public SelenideElement logoutButton = $x("//a[@title='Выход из приложения']");
 
     @Step("Нажать кнопку \"Compliance\"")
     public BasePage pressComplianceButton() {
-        $x("//button[text()='Compliance']").click();
+        $x("//button[text()='___Compliance']").click();
         return this;
     }
     @Step("Выбрать пункт \"Заявки\"")

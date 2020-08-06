@@ -1,4 +1,25 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 50.246 s - in TestSuite
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 23.981 s <<< FAILURE! - in TestSuite
+requestCreationAndApprovalTest(Tests.UserTests)  Time elapsed: 11.878 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //button[text()='___Compliance']}
+Expected: visible or transparent: visible or have css value opacity=0
+Screenshot: file:/B:/Projects/HLDNATesting/build/reports/tests/1596737953354.0.png
+Page source: file:/B:/Projects/HLDNATesting/build/reports/tests/1596737953354.0.html
+Timeout: 8 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='___Compliance']"}
+	at Tests.UserTests.requestCreationAndApprovalTest(UserTests.java:97)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='___Compliance']"}
+  (Session info: chrome=84.0.4147.105)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-6MP05UP', ip: '192.168.40.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\korne\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52933}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 2a671ef8ef80a9caece40b83b73bd105
+*** Element info: {Using=xpath, value=//button[text()='___Compliance']}
+	at Tests.UserTests.requestCreationAndApprovalTest(UserTests.java:97)
+

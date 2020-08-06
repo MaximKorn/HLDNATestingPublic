@@ -1,17 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="2" total="3" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-08-05T12:14:00Z" name="Surefire suite" finished-at="2020-08-05T12:14:47Z" duration-ms="47134">
+  <suite started-at="2020-08-06T18:18:52Z" name="Surefire suite" finished-at="2020-08-06T18:19:14Z" duration-ms="21829">
     <groups>
     </groups>
-    <test started-at="2020-08-05T12:14:00Z" name="Surefire test" finished-at="2020-08-05T12:14:47Z" duration-ms="47134">
+    <test started-at="2020-08-06T18:18:52Z" name="Surefire test" finished-at="2020-08-06T18:19:14Z" duration-ms="21829">
       <class name="Tests.UserTests">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Tests.UserTests@54f5f647]" started-at="2020-08-05T12:14:00Z" name="beforeMethod" description="Чтение данных из CSV-файлов. Открытие браузера" finished-at="2020-08-05T12:14:16Z" duration-ms="16316" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:Tests.UserTests@503fbbc6]" started-at="2020-08-06T18:18:52Z" name="beforeMethod" description="Чтение данных из CSV-файлов. Открытие браузера" finished-at="2020-08-06T18:19:02Z" duration-ms="9504" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="requestCreationAndApprovalTest()[pri:0, instance:Tests.UserTests@54f5f647]" started-at="2020-08-05T12:14:16Z" name="requestCreationAndApprovalTest" finished-at="2020-08-05T12:14:47Z" duration-ms="30172" status="PASS">
+        <test-method signature="requestCreationAndApprovalTest()[pri:0, instance:Tests.UserTests@503fbbc6]" started-at="2020-08-06T18:19:02Z" name="requestCreationAndApprovalTest" finished-at="2020-08-06T18:19:13Z" duration-ms="11396" status="FAIL">
+          <exception class="com.codeborne.selenide.ex.ElementNotFound">
+            <message>
+              <![CDATA[Element not found {By.xpath: //button[text()='___Compliance']}
+Expected: visible or transparent: visible or have css value opacity=0
+Screenshot: file:/B:/Projects/HLDNATesting/build/reports/tests/1596737953354.0.png
+Page source: file:/B:/Projects/HLDNATesting/build/reports/tests/1596737953354.0.html
+Timeout: 8 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='___Compliance']"}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[Element not found {By.xpath: //button[text()='___Compliance']}
+Expected: visible or transparent: visible or have css value opacity=0
+Screenshot: file:/B:/Projects/HLDNATesting/build/reports/tests/1596737953354.0.png
+Page source: file:/B:/Projects/HLDNATesting/build/reports/tests/1596737953354.0.html
+Timeout: 8 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='___Compliance']"}
+at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:56)
+at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:133)
+at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:87)
+at com.codeborne.selenide.impl.WebElementSource.findAndAssertElementIsInteractable(WebElementSource.java:112)
+at com.codeborne.selenide.commands.Click.execute(Click.java:20)
+at com.codeborne.selenide.commands.Click.execute(Click.java:14)
+at com.codeborne.selenide.commands.Commands.execute(Commands.java:152)
+at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:104)
+at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:70)
+at com.sun.proxy.$Proxy19.click(Unknown Source)
+at Pages.BasePage.pressComplianceButton(BasePage.java:14)
+at Steps.BaseStep.goToRequestListPage(BaseStep.java:23)
+at Tests.UserTests.requestCreationAndApprovalTest(UserTests.java:97)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:135)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:193)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:94)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:386)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:323)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:143)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='___Compliance']"}
+  (Session info: chrome=84.0.4147.105)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-6MP05UP', ip: '192.168.40.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\korne\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52933}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 2a671ef8ef80a9caece40b83b73bd105
+*** Element info: {Using=xpath, value=//button[text()='___Compliance']}
+at jdk.internal.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:65)
+at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:40)
+at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:101)
+at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:72)
+... 39 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.codeborne.selenide.ex.ElementNotFound -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- requestCreationAndApprovalTest -->
