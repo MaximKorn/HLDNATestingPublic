@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="50.246" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="23.981" tests="1" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -58,5 +58,44 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="requestCreationAndApprovalTest" classname="Tests.UserTests" time="30.168"/>
+  <testcase name="requestCreationAndApprovalTest" classname="Tests.UserTests" time="11.878">
+    <failure message="Element not found {By.xpath: //button[text()=&apos;___Compliance&apos;]}&#10;Expected: visible or transparent: visible or have css value opacity=0&#10;Screenshot: file:/B:/Projects/HLDNATesting/build/reports/tests/1596737953354.0.png&#10;Page source: file:/B:/Projects/HLDNATesting/build/reports/tests/1596737953354.0.html&#10;Timeout: 8 s.&#10;Caused by: NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[text()=&apos;___Compliance&apos;]&quot;}" type="com.codeborne.selenide.ex.ElementNotFound">com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.xpath: //button[text()='___Compliance']}
+Expected: visible or transparent: visible or have css value opacity=0
+Screenshot: file:/B:/Projects/HLDNATesting/build/reports/tests/1596737953354.0.png
+Page source: file:/B:/Projects/HLDNATesting/build/reports/tests/1596737953354.0.html
+Timeout: 8 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='___Compliance']"}
+	at Tests.UserTests.requestCreationAndApprovalTest(UserTests.java:97)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='___Compliance']"}
+  (Session info: chrome=84.0.4147.105)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-6MP05UP', ip: '192.168.40.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: C:\Users\korne\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52933}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 2a671ef8ef80a9caece40b83b73bd105
+*** Element info: {Using=xpath, value=//button[text()='___Compliance']}
+	at Tests.UserTests.requestCreationAndApprovalTest(UserTests.java:97)
+</failure>
+    <system-err><![CDATA[[main] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot!
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - ====> http://tiny.cc/wdm-survey <====
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 84.0.4147.30 (since Chrome 84 is installed in your machine)
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\korne\.m2\repository\webdriver\chromedriver\win32\84.0.4147.30\chromedriver.exe
+[main] INFO com.codeborne.selenide.webdriver.AbstractDriverFactory - Write webdriver logs to: B:\Projects\HLDNATesting\build\reports\tests\webdriver.1596737934046_12380_1.log
+Starting ChromeDriver 84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310}) on port 35933
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+авг. 06, 2020 9:19:00 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[main] INFO com.codeborne.selenide.webdriver.BrowserResizer - Set browser size to 1366x768
+[main] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=84.0.4147.105 Platform=WINDOWS
+[main] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 5.13.0
+[main] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+[main] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Create webdriver in current thread 1: ChromeDriver -> ChromeDriver: chrome on WINDOWS (2a671ef8ef80a9caece40b83b73bd105)
+]]></system-err>
+  </testcase>
 </testsuite>

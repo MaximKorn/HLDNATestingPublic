@@ -16,7 +16,6 @@ import io.qameta.allure.Description;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.io.Console;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -54,7 +53,7 @@ public class UserTests extends BaseTest {
         dateFormat = new SimpleDateFormat("d.MM.yyyy");
 
         reader = readCSV(csvUserData);
-        while ((csvCell = reader.readNext())!= null) {
+        while ((csvCell = reader.readNext()) != null) {
             userData.add(csvCell);
         }
 
@@ -66,11 +65,11 @@ public class UserTests extends BaseTest {
         headOfDivisionUserData = createUserFromData(userData.get(1));
         headOfComplianceUserData = createUserFromData(userData.get(2));
         calendar = Calendar.getInstance();
-        calendar.add(Calendar.DATE,3);
+        calendar.add(Calendar.DATE, 3);
         invitationResponseDeadline = dateFormat.format(calendar.getTime());
-        calendar.add(Calendar.DATE,3);
+        calendar.add(Calendar.DATE, 3);
         eventStartDate = dateFormat.format(calendar.getTime());
-        calendar.add(Calendar.DATE,3);
+        calendar.add(Calendar.DATE, 3);
         eventEndDate = dateFormat.format(calendar.getTime());
 
         eventInvitationRequest = createEventInvitationRequestFromData(requestData.get(0), eventStartDate,
@@ -78,7 +77,7 @@ public class UserTests extends BaseTest {
 
         commentApproval = "Тестовый одобрительный комментарий";
 
-        Configuration.timeout = 8000;
+        Configuration.timeout = 3000;
         open(baseUrl);
         baseStep = new BaseStep();
         loginStep = new LoginStep();
@@ -88,7 +87,7 @@ public class UserTests extends BaseTest {
     }
 
     @Description("Проверка создания и согласования заявки \"Приглашение на мероприятие\"")
-    @Test
+    @Test(enabled = true)
     public void requestCreationAndApprovalTest() {
 
         // Действия пользователя с ролью Initiator
