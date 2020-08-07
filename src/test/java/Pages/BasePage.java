@@ -11,7 +11,7 @@ public class BasePage {
 
     @Step("Нажать кнопку \"Compliance\"")
     public BasePage pressComplianceButton() {
-        $x("//button[text()='___Compliance']").click();
+        $x("//button[text()='Compliance']").click();
         return this;
     }
     @Step("Выбрать пункт \"Заявки\"")
